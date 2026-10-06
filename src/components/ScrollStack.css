@@ -1,0 +1,4 @@
+.scroll-stack-scroller { position: relative; }
+.scroll-stack-card { position: relative; transform-origin: top center; margin-bottom: 28px; }
+.stack-active .scroll-stack-card { will-change: transform; backface-visibility: hidden; }
+.stack-active .scroll-stack-end { height: 250px; }
