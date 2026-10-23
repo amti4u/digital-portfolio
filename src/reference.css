@@ -58,7 +58,7 @@ a:focus-visible{outline-color:#5589cf}
 .section-heading{display:block;text-align:center;margin-bottom:80px;color:#fff8ee}
 .section-heading h2{font-family:'Golos Text',Arial,sans-serif;font-size:clamp(64px,10vw,170px);font-weight:900;line-height:1;letter-spacing:.005em;text-transform:uppercase;color:#c9dcff;background:none;-webkit-text-fill-color:currentColor}
 .section-heading p{margin-top:25px;color:#ead7ca;font-size:clamp(14px,1.4vw,18px)}
-.project-card,.project-card.bloom,.project-card.materials,.project-card.sobr,.project-card.studio,.project-card.bot{max-width:min(100%,calc((100svh - 310px) * 1.777 + 56px));margin-left:auto;margin-right:auto;padding:28px;border:2px solid #f2e5da;border-radius:clamp(30px,4vw,60px);background:#fff8ee;color:#4b2b19;box-shadow:0 25px 55px #24100577;overflow:hidden}
+.project-card,.project-card.bloom,.project-card.materials,.project-card.sobr,.project-card.studio,.project-card.bot{max-width:min(100%,max(820px,calc((100svh - 390px) * 1.777 + 56px)));margin-left:auto;margin-right:auto;padding:28px;border:2px solid #f2e5da;border-radius:clamp(30px,4vw,60px);background:#fff8ee;color:#4b2b19;box-shadow:0 25px 55px #24100577;overflow:hidden}
 .project-card.bloom{background:#eee7f2}.project-card.materials{background:#e5e1d5}.project-card.sobr{background:#d4e1ec}.project-card.studio{background:#f3e2d4}.project-card.bot{background:#d5e4dc}
 .project-heading{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;margin-bottom:20px}
 .project-number{font-family:'Golos Text',Arial,sans-serif;font-size:68px;font-weight:900;line-height:1;letter-spacing:0}
@@ -78,10 +78,27 @@ a:focus-visible{outline-color:#5589cf}
 .crm-story,.bot-story{color:#4b2b19}
 .case-promise h4,.crm-story .case-promise h4{letter-spacing:0;line-height:1.2}
 .crm-story .case-promise h4 br{display:inline}
-.portfolio-footer{min-height:300px;padding:70px 5% 45px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;background:#4b2b19;border-top:1px solid #fff8ee44;color:#fff8ee}
+/* Case studies grow with their contents: no hidden descriptions or cropped demos. */
+.studio .project-visual,.bot .project-visual{height:auto;aspect-ratio:auto}
+.crm-story,.bot-story{height:auto;min-height:360px;padding:24px 5%;gap:6%;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.case-promise{min-width:0}
+.case-promise h4,.crm-story .case-promise h4{font-size:clamp(23px,2vw,30px);line-height:1.22;letter-spacing:0}
+.crm-story .case-promise h4 br{display:block}
+.case-promise>p:not(.case-audience),.crm-story .case-promise>p:not(.case-audience){font-size:12px;line-height:1.6;margin-top:14px;max-width:380px}
+.case-audience,.flow-caption{line-height:1.5;margin-bottom:14px}
+.crm-demo{height:auto;min-width:0;gap:12px;padding:18px 12px;background:#fff8f0;border:1px solid #ffffffb3;border-radius:24px;box-shadow:0 10px 24px #4b2b1912;overflow:hidden}
+.crm-demo video{width:auto;height:340px;max-width:100%;object-fit:contain;border-radius:22px;overflow:hidden;clip-path:inset(0 round 22px);background:#eee4dd}
+.crm-demo figcaption{font-size:9px;line-height:1.5}
+.booking-flow{min-width:0;padding:20px}
+.booking-flow li{padding:10px 0}
+.booking-flow strong{line-height:1.4}
+.flow-result{line-height:1.6}
+.portfolio-footer{min-height:300px;padding:70px 5% 45px;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-items:end;column-gap:40px;row-gap:16px;background:#4b2b19;border-top:1px solid #fff8ee44;color:#fff8ee}
+.portfolio-footer>div{grid-column:1;grid-row:1 / 3;align-self:center}
+.portfolio-footer>.hero-contact-button{grid-column:2;grid-row:1;justify-self:end;align-self:end}
 .portfolio-footer>div p{max-width:420px;margin-top:10px;font-size:clamp(22px,2.3vw,36px);line-height:1.25;letter-spacing:0}
 .portfolio-footer .footer-name{font-family:Georgia,serif;font-size:40px;font-style:italic}
-.portfolio-footer>a:last-child{font-size:13px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.portfolio-footer>a:last-child{grid-column:2;grid-row:2;justify-self:end;align-self:start;min-height:32px;display:inline-flex;align-items:center;font-size:10px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
 
 @media(max-width:900px){
   .hero-v2{min-height:600px}
@@ -111,7 +128,7 @@ a:focus-visible{outline-color:#5589cf}
   .project-visual{height:auto;aspect-ratio:1.12;border-radius:18px}
   .studio .project-visual,.bot .project-visual{height:auto;aspect-ratio:auto}
   .project-bottom{display:block}.tags{margin-top:13px}
-  .portfolio-footer{min-height:300px;padding:50px 7%;display:grid;grid-template-columns:1fr auto;align-content:space-between}.portfolio-footer .hero-contact-button{justify-self:start}.portfolio-footer>a:last-child{grid-column:2;grid-row:2}
+  .portfolio-footer{min-height:300px;padding:50px 7%;grid-template-columns:minmax(0,1fr) auto;column-gap:24px;align-content:center}.portfolio-footer .hero-contact-button{justify-self:end}.portfolio-footer>a:last-child{grid-column:2;grid-row:2}
 }
 @media(max-width:430px){
   .hero-nav nav{gap:9px}.hero-nav nav a{font-size:9px}
@@ -119,6 +136,27 @@ a:focus-visible{outline-color:#5589cf}
   .hero-v2-head{height:min(66svh,92vw,440px)}
   .hero-v2-intro{max-width:155px;font-size:10px}
   .service-row{grid-template-columns:84px 1fr;gap:14px}.service-number{font-size:60px}.service-row h3{font-size:21px}
-  .portfolio-footer{grid-template-columns:minmax(0,1fr);gap:24px}.portfolio-footer .hero-contact-button{grid-column:1;justify-self:start}.portfolio-footer>a:last-child{grid-column:1;grid-row:auto;justify-self:start}
+  .portfolio-footer{grid-template-columns:minmax(0,1fr);gap:16px}.portfolio-footer>div{grid-column:1;grid-row:1}.portfolio-footer .hero-contact-button{grid-column:1;grid-row:2;justify-self:end;margin-top:10px}.portfolio-footer>a:last-child{grid-column:1;grid-row:3;justify-self:end}
 }
 @media(prefers-reduced-motion:reduce){.hero-v2-head,.hero-contact-button{transition:none!important;transform:none!important}.hero-v2-head{transform:translateX(-50%)!important}.showcase-track,.showcase-track.reverse{transform:translateX(-33.333%)!important}}
+
+@media(max-width:760px){
+  .crm-story,.bot-story{grid-template-columns:minmax(0,1fr);min-height:0;padding:24px 20px;gap:26px}
+  .case-promise h4,.crm-story .case-promise h4,.bot-story .case-promise h4{font-size:27px;max-width:none}
+  .crm-demo video{height:auto;width:min(100%,230px)}
+  .crm-demo{height:auto}
+  .booking-flow{padding:20px}
+}
+
+/* Align the complete action group with the invitation, independently of the monogram. */
+.portfolio-footer{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-content:center;align-items:center;row-gap:16px}
+.portfolio-footer>.footer-intro{display:contents}
+.portfolio-footer .footer-name{grid-column:1;grid-row:1;justify-self:start}
+.portfolio-footer .footer-intro>p{grid-column:1;grid-row:2;margin:0}
+.portfolio-footer>.footer-actions{grid-column:2;grid-row:2;align-self:center;display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+.portfolio-footer .footer-up{display:inline-flex;align-items:center;min-height:32px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+@media(max-width:430px){
+  .portfolio-footer{grid-template-columns:minmax(0,1fr);row-gap:16px}
+  .portfolio-footer>.footer-actions{grid-column:1;grid-row:3;margin-top:10px;justify-self:end}
+  .portfolio-footer .hero-contact-button{margin-top:0}
+}

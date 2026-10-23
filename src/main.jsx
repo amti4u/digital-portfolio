@@ -11,7 +11,7 @@ const projects = [
   { title: 'Élan Bloom', category: 'Сайт флористической студии', description: 'Атмосферный сайт с авторскими букетами, интерактивным цветком и формой заказа.', image: 'elan-bloom', url: 'https://elanbloom.vercel.app/', theme: 'bloom', tags: ['Сайт', 'Каталог', 'Анимация'] },
   { title: 'PRO Материалы', category: 'Сайт строительного магазина', description: 'Каталог материалов, интерактивная 3D-композиция и удобный путь от выбора до заявки.', image: 'promaterials', url: 'https://promaterials.vercel.app/', theme: 'materials', tags: ['Сайт', '3D', 'Каталог'] },
   { title: 'SOBR Detailing', category: 'Сайт детейлинг-центра', description: 'Автомобили, детали и результат работы. Сайт с 3D-моделью и интерактивным сравнением «до и после».', image: 'sobr', url: 'https://sobrdeteiling.vercel.app/', theme: 'sobr', tags: ['Сайт', '3D', 'Интерактив'] },
-  { title: 'Запись без переписки', category: 'Онлайн-запись для частного мастера', description: 'Бот берёт на себя согласование времени, а мастер получает готовую запись и может заниматься клиентом, а не сообщениями.', theme: 'bot', tags: ['Telegram', 'Автоматизация'], kind: 'bot' },
+  { title: 'Telegram-боты для бизнеса', category: 'Боты и автоматизация процессов', description: 'Разрабатываю ботов под задачи бизнеса: от заявок и заказов до записи, уведомлений и внутренних процессов.', theme: 'bot', tags: ['Telegram', 'Автоматизация'], kind: 'bot' },
 ];
 
 function Hero() {
@@ -66,7 +66,7 @@ function Marquee() {
 const services = [
   { name: 'Сайты', description: 'Лендинги, каталоги и сайты для бизнеса с характером и понятным путём к заявке.' },
   { name: 'Приложения', description: 'Удобные приложения под вашу идею: от первого экрана до продуманного пользовательского сценария.' },
-  { name: 'Боты и автоматизации', description: 'Сценарии в Telegram, которые помогают принимать записи и сокращают ручную работу.' },
+  { name: 'Боты и автоматизации', description: 'Боты для заявок, заказов, записи и внутренних процессов — меньше ручной работы для команды.' },
 ];
 function Services() {
   return <section className="services-section" id="services"><h2>Услуги</h2><div className="services-list">{services.map((service, i) => <div className="service-row" key={service.name}><span className="service-number">0{i + 1}</span><div><h3>{service.name}</h3><p>{service.description}</p></div></div>)}</div></section>;
@@ -80,8 +80,8 @@ function AppIllustration() {
 }
 function BotIllustration() {
   return <div className="bot-story">
-    <div className="case-promise"><p className="case-audience">Для частного мастера</p><h4>Принимать записи, <br/>пока вы заняты <br/>с клиентом.</h4><p>Не нужно согласовывать каждое время в переписке. Бот проводит клиента от выбора услуги до подтверждения.</p></div>
-    <div className="booking-flow" aria-label="Как работает запись через бота"><p className="flow-caption">Путь клиента в Telegram</p><ol><li><span>1</span><div><strong>Выбирает услугу</strong><p>Видит описание и стоимость.</p></div></li><li><span>2</span><div><strong>Находит свободное время</strong><p>Выбирает дату и доступное окно.</p></div></li><li><span>3</span><div><strong>Подтверждает запись</strong><p>Мастер получает уведомление.</p></div></li></ol><p className="flow-result">Клиент может посмотреть или отменить свой визит прямо в боте.</p></div>
+    <div className="case-promise"><p className="case-audience">Под задачи вашего бизнеса</p><h4>Меньше рутины.<br/>Больше времени<br/>на главное</h4><p>Бот помогает клиентам получить ответ, оставить заявку или оформить заказ, а команде — вовремя получить нужную информацию.</p><span className="case-status">Возможные сценарии</span></div>
+    <div className="booking-flow" aria-label="Возможные сценарии Telegram-ботов"><p className="flow-caption">Что можно поручить боту</p><ol><li><span>1</span><div><strong>Заявки и заказы</strong><p>Собрать данные клиента и передать обращение команде.</p></div></li><li><span>2</span><div><strong>Запись и уведомления</strong><p>Подобрать время, подтвердить запись и отправить напоминание.</p></div></li><li><span>3</span><div><strong>Поддержка и процессы</strong><p>Ответить на частые вопросы или провести сотрудника по рабочему сценарию.</p></div></li></ol><p className="flow-result">Логику и интеграции подбираю под вашу задачу.</p></div>
   </div>;
 }
 function Project({ project: p, index }) {
@@ -96,6 +96,6 @@ function App() {
     <section className="about" id="about"><span className="about-sticker sticker-moon" aria-hidden="true"/><span className="about-sticker sticker-cube" aria-hidden="true"/><span className="about-sticker sticker-smile" aria-hidden="true"/><span className="about-sticker sticker-pointer" aria-hidden="true"/><img className="about-flower" src="/images/leopard-flower.png" alt="" aria-hidden="true" loading="lazy"/><h2>Обо мне</h2><div className="about-copy"><p className="about-kicker">Привет, я Маргарита</p><p className="about-intro">Мне нравится превращать идеи в то, чем можно пользоваться каждый день</p><p>Создаю выразительные сайты, удобные приложения и Telegram-ботов для автоматизации отдельных задач. В каждом проекте ищу форму, которая подходит именно его цели.</p></div><a className="hero-contact-button" href={telegram} target="_blank" rel="noreferrer">Написать мне <Arrow/></a></section>
     <Services />
     <section className="work" id="work"><div className="section-heading"><h2>Проекты</h2><p>Сайты, приложение и автоматизация для разных задач</p></div><ScrollStack>{projects.map((p, index)=><Project project={p} index={index} key={p.title}/>)}</ScrollStack></section></main>
-    <footer className="portfolio-footer" id="contact"><div><a className="footer-name" href="#top">m✳</a><p>Есть идея? Давайте сделаем её работающей</p></div><a className="hero-contact-button" href={telegram} target="_blank" rel="noreferrer">Написать в Telegram <Arrow/></a><a href="#top">Наверх ↑</a></footer></>;
+    <footer className="portfolio-footer" id="contact"><div className="footer-intro"><a className="footer-name" href="#top">m✳</a><p>Есть идея? Давайте сделаем её работающей</p></div><div className="footer-actions"><a className="hero-contact-button" href={telegram} target="_blank" rel="noreferrer">Написать в Telegram <Arrow/></a><a className="footer-up" href="#top">Наверх ↑</a></div></footer></>;
 }
 createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);
